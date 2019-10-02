@@ -1,34 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assest/css/style.css">
-    <title>Train Scheduler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Share+Tech+Mono'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <title>Train Schedule</title>
   </head>
   <body>
 
     <div id="clock">
-        <p class="date"></p>
-        <p class="time"></p>
+        <p class="date">{{ date }}</p>
+        <p class="time">{{ time }}</p>
         <p class="text">Your Daily Train Check</p>
     </div>
 
     <div class="container">
         <div class="col-lg-12">
             <div class="panel" style="margin-top: 35%">
-                <div class="panel-heading" style="background-color #0f3854">
-                    <h3 class="panel-tile" style="color: white; font-family: 'Share Tech Mono', monospace;">Current Train Schedule</h3>
+                <div class="panel-heading" style="background-color: #0f3854">
+                    <h3 class="panel-title" style="color: white; font-family: 'Share Tech Mono', monospace;">Current Train Schedule</h3>
     </div>
 
+    <table id="Schedule" class="table table-striped table-bordered" cellspacing="0" width="100%" style="background-color: #6b8299">
+        <thead>
+            <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency (in minutes)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    
-    
-    
-    
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="assest/javascript/train.js"></script>
+        </tbody>    
+    </table>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="background-color: #0f3854">
+            <h3class="panel-tile" style="color: white; font-family: 'Share Tech Mono', monospace;">Add Train</h3>
+        </div>
+        <div class="panel-body" style="background-color: #6b8299">
+       
+                    <form role="form">
+            <div class="form-group">
+                <label for="train-input">Train Name</label>
+                <input class="form-control" id="destination-input" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="destination-input">Destination</label>
+                    <input class="form-control" id="destination-input" type="text">
+                </div>
+               <div class="form-group">
+                   <label for="time-input">First Train Time (HH:mm - military time)</label>
+                   <input class="form-control" id="time-input" type="text">
+               </div>
+               <div class="form-group">
+                   <label for="frequency-input">Frequency (in minutes)</label>
+                   <input class="form-control" id="frequency-input" type="text">
+               </div>
+               <button class="btn btn-default" id="add-train" type="submit" style="font-family: 'Share Tech Mono', monospace;">Send</button>
+               </form>
+        </div>
+    </div>
+</div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+    <script type="text/javascript" src="assets/javascript/train.js"></script>
   </body>
 </html>
