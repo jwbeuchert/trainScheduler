@@ -12,19 +12,19 @@ updateTime();
 function updateTime() {
     var cd = new Date();
     clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
-    clock,date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + '' + week[cd.getDate()];
+    clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDate()];
 };
 
 function zeroPadding(num, digit) {
     var zero = '';
-    for(var i = 0; i , digit; i++) {
+    for(var i = 0; i < digit; i++) {
         zero += '0';
     }
     return (zero + num).slice(-digit);
 }
 
 // Initializing Firebase
-var config = {
+var firebaseConfig = {
     apiKey: "AIzaSyDEvD5fmgtv3dx9dfZIvQUeHlYOTAaksuA",
     authDomain: "trainscheduler-14711.firebaseapp.com",
     databaseURL: "https://trainscheduler-14711.firebaseio.com",
@@ -36,7 +36,7 @@ var config = {
 
   firebase.initializeApp(firebaseConfig);
 
-  var dataRef = firebase.database();
+  var database = firebase.database();
 
   var Train = "";
   var Destination = "";
@@ -46,9 +46,12 @@ var config = {
   $("#add-train").on("click", function() {
 
     Train = $("#train-input").val().trim();
+    Destination = $("#destination-input").val().trim();
     firstTime = moment($("#time-input").val().trim(), "HH:mm").subtract(10, "years").format("X");
+    Frequency = $("#frequency-input").val().trim();
 
     dataRef.ref().push({
+
         Train: Train,
         Destination: Destination,
         firstTime: firstTime,
@@ -83,5 +86,5 @@ var config = {
 
     console.log(tMinutes);
 
-    $("#Schedule > tbody").append("<tr><td>" + tTrain + "</td><td>" + tDestination + "</td><td>" + tFrequency + " min</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></TD>");
+    $("#Schedule > tbody").append("<tr><td>" + tTrain + "</td><td>" + tDestination + "</td><td>" + tFrequency + " min</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
   });
