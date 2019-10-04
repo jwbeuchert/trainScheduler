@@ -24,7 +24,7 @@ function zeroPadding(num, digit) {
 }
 
 // Initializing Firebase
-var firebaseConfig = {
+var config = {
     apiKey: "AIzaSyDEvD5fmgtv3dx9dfZIvQUeHlYOTAaksuA",
     authDomain: "trainscheduler-14711.firebaseapp.com",
     databaseURL: "https://trainscheduler-14711.firebaseio.com",
@@ -34,9 +34,9 @@ var firebaseConfig = {
     appId: "1:588322930078:web:3576bfb815028938e7aa8f"
   };
 
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(config);
 
-  var database = firebase.database();
+  var dataRef = firebase.database();
 
   var Train = "";
   var Destination = "";
