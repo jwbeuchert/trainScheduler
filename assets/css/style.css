@@ -28,7 +28,7 @@ p {
 
 #clock .time {
     letter-spacing: 0.05em;
-    font-size: 24px;
+    font-size: 80px;
     padding: 5px 0;
 }
 #clock .date {
