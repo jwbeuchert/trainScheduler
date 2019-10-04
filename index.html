@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+        <title>Train Schedule</title>
+
       <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -8,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- jquery -->
     <script  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Firebase -->
@@ -16,20 +19,21 @@
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <title>Train Schedule</title>
+    
   </head>
   <body>
 
     <div id="clock">
         <p class="date">{{ date }}</p>
         <p class="time">{{ time }}</p>
-        <p class="text">Your Daily Train Check</p>
+        <p class="text">Your Daily Train CheckerS</p>
     </div>
 
     <div class="container">
+        <!-- Tain Schedule -->
         <div class="col-lg-12">
-            <div class="panel" style="margin-top: 35%">
-                <div class="panel-heading" style="background-color: #0f3854">
+                <div class="panel" style="margin-top: 35%">
+                  <div class="panel-heading" style="background-color: #0f3854">
                     <h3 class="panel-title" style="color: white; font-family: 'Share Tech Mono', monospace;">Current Train Schedule</h3>
     </div>
 
@@ -45,8 +49,8 @@
         </thead>
         <tbody>
 
-        </tbody>    
-    </table>
+            </tbody>    
+        </table>
     </div>
 </div>
 
@@ -54,8 +58,8 @@
 
 <div class="col-lg-12">
     <div class="panel panel-default">
-        <div class="panel-heading" style="background-color: #0f3854">
-            <h3 class="panel-title" style="color: white; font-family: 'Share Tech Mono', monospace;">Add Train</h3>
+            <div class="panel-heading" style="background-color: #0f3854">
+                    <h3 class="panel-title" style="color: white; font-family: 'Share Tech Mono', monospace;">Add Train</h3>
         </div>
         <div class="panel-body" style="background-color: #6b8299">
        
@@ -82,6 +86,8 @@
     </div>
 </div>
     </div>
+
+    <!-- Vue.js -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <!-- My JavaScript -->
     <script type="text/javascript" src="assets/javascript/train.js"></script>
